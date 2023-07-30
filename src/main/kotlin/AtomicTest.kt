@@ -15,3 +15,25 @@ infix fun Any.eq(rVal: String): String = test(this, rVal) {
 infix fun Any.neq(rVal: String): String = test(this, rVal, false) {
     toString().trim() != rVal.trimIndent()
 }
+
+object trace {
+    private val trc = mutableListOf<String>()
+    operator fun invoke(obj: Any?) {
+        trc += obj.toString()
+    }
+
+    /**
+     * Compares trc contents to a multiline
+     * `String` by ignoring white space.
+     */
+    infix fun eq(multiline: String) {
+        val trace = trc.joinToString("\n")
+        val expected = multiline.trimIndent()
+            .replace("\n", " ")
+        val testResult = test(trace, multiline) {
+            trace.replace("\n", " ") == expected
+        }
+        println(testResult)
+        trc.clear()
+    }
+}
