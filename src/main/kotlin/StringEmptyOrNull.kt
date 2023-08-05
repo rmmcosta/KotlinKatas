@@ -13,6 +13,6 @@ private fun String?.isEmptyOrNull(): Boolean {
     return this==null || this.length == 0
 }
 
-private infix fun Boolean.eq(other: Boolean) {
+infix fun Boolean.eq(other: Boolean) {
     println(this==other)
 }
