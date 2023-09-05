@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ad6bcd7-df67-47ff-be1f-ffdb40ee95df" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +31,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 0
@@ -67,9 +69,9 @@
       <recent name="java_vs_kotlin" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.FunctionsKt">
-    <configuration name="BoundAndNonBoundReferencesKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BoundAndNonBoundReferencesKt" />
+  <component name="RunManager" selected="Kotlin.ClassesMethodsAndFunctionsKt">
+    <configuration name="ClassesMethodsAndFunctionsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ClassesMethodsAndFunctionsKt" />
       <module name="KotlinKatas.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -82,8 +84,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MemberReferenceKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MemberReferenceKt" />
+    <configuration name="InterfacesKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InterfacesKt" />
       <module name="KotlinKatas.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -96,8 +98,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StoreLambdasInVariablesKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="StoreLambdasInVariablesKt" />
+    <configuration name="SquaresOfNaturalNumsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SquaresOfNaturalNumsKt" />
       <module name="KotlinKatas.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -105,11 +107,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ClassesMethodsAndFunctionsKt" />
+        <item itemvalue="Kotlin.SquaresOfNaturalNumsKt" />
+        <item itemvalue="Kotlin.InterfacesKt" />
         <item itemvalue="Kotlin.FunctionsKt" />
         <item itemvalue="Kotlin.ReturnFromLambdaKt" />
-        <item itemvalue="Kotlin.BoundAndNonBoundReferencesKt" />
-        <item itemvalue="Kotlin.MemberReferenceKt" />
-        <item itemvalue="Kotlin.StoreLambdasInVariablesKt" />
       </list>
     </recent_temporary>
   </component>
