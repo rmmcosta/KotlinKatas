@@ -1,10 +1,23 @@
 import java.lang.Exception
 import java.math.RoundingMode
 import java.text.DecimalFormat
-import kotlin.math.roundToInt
 import kotlin.random.Random
 
 data class Score(val playerId: Int, val level: Int, val score: Double)
+
+data class Player(val id: Int, val name: String)
+
+data class PlayerPersonalBest(val playerId: Int, val level: Int, var score: Double)
+
+enum class Option(val description: String) {
+    E("Exit"),
+    V("View Player Score"),
+    I("Insert Score"),
+    W("Check Winner"),
+    P("View Players"),
+    A("View all Personal Bests"),
+    C("Create Player"),
+}
 
 object Scores {
     private val players = mutableListOf<Player>()
@@ -70,20 +83,6 @@ object Scores {
 
     fun getAllPersonalBests() = playersPersonalBest
 
-}
-
-data class Player(val id: Int, val name: String)
-
-data class PlayerPersonalBest(val playerId: Int, val level: Int, var score: Double)
-
-enum class Option(val description: String) {
-    E("Exit"),
-    V("View Player Score"),
-    I("Insert Score"),
-    W("Check Winner"),
-    P("View Players"),
-    A("View all Personal Bests"),
-    C("Create Player"),
 }
 
 fun main() {
