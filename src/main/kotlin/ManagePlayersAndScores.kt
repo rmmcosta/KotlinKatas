@@ -1,6 +1,3 @@
-import java.lang.Exception
-import java.math.RoundingMode
-import java.text.DecimalFormat
 import kotlin.random.Random
 
 data class Score(val playerId: Int, val level: Int, val score: Double)
@@ -34,13 +31,22 @@ object Scores {
         }
     }
 
-    fun addScore(playerId: Int, level: Int, score: Double) {
+    fun addScore(playerId: Int, level: Int, score: Double): Boolean {
+        if (getPlayerByNameOrId(playerId.toString()) == null) {
+            return false
+        }
         //add score and check if is a personal best
         val previousScore: Double = getPersonalBest(playerId, level)?.score ?: 0.0
         scores += Score(playerId, level, score)
         if (score > previousScore) {
+            removePersonalBest(playerId, level, previousScore)
             addPersonalBest(playerId, level, score)
         }
+        return true
+    }
+
+    private fun removePersonalBest(playerId: Int, level: Int, score: Double) {
+        playersPersonalBest.removeIf { it.playerId == playerId && it.level == level && it.score == score }
     }
 
     fun getPersonalBest(playerId: Int, level: Int): PlayerPersonalBest? =
@@ -74,6 +80,10 @@ object Scores {
         println("${player.name} - Scores History")
         scores.filter { it.playerId == player.id }.forEach { println(it) }
     }
+
+    fun getPlayersScores(): List<Score> = scores
+
+    fun getPlayerScoresById(playerId: Int): List<Score> = scores.filter { it.playerId == playerId }
 
     fun getPlayerByNameOrId(playerNameOrId: String): Player? {
         val isPlayerId = playerNameOrId.toIntOrNull() != null
@@ -126,11 +136,7 @@ fun bootstrapData() {
     }
 }
 
-fun generateRandomScore(): Double {
-    val df = DecimalFormat("#.##")
-    df.roundingMode = RoundingMode.DOWN
-    return df.format((Random.nextDouble() + 1) * 10).toDouble()
-}
+fun generateRandomScore(): Double = Random.nextInt(1, 100).toDouble()
 
 fun checkWinner() {
     var level: Int? = null
