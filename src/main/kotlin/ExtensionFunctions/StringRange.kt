@@ -24,7 +24,7 @@ import kotlin.text.StringBuilder
     }
 }*/
 
-operator fun ClosedRange<String>.iterator() = object : Iterator<String> {
+/*operator fun ClosedRange<String>.iterator() = object : Iterator<String> {
 
     private val next: StringBuilder = StringBuilder(start)
     private val last: String = endInclusive
@@ -47,7 +47,33 @@ operator fun ClosedRange<String>.iterator() = object : Iterator<String> {
         }
         return result
     }
+}*/
+
+operator fun ClosedRange<String>.iterator() = object : Iterator<String> {
+    private val next: StringBuilder = StringBuilder(start)
+    private val last: String = endInclusive
+
+    override fun hasNext(): Boolean = next.toString() <= last && next.length <= last.length
+
+    override fun next(): String {
+        val result = next.toString()
+        incrementNext()
+        return result
+    }
+
+    private fun incrementNext() {
+        for (i in next.indices) {
+            val currentChar = next[i]
+            if (currentChar < (last.getOrNull(i) ?: Char.MIN_VALUE)) {
+                next[i] = currentChar + 1
+                break
+            } else if (i == next.lastIndex) {
+                next.append(Char.MIN_VALUE)
+            }
+        }
+    }
 }
+
 
 fun main() {
     for (i in "hell".."help") {
