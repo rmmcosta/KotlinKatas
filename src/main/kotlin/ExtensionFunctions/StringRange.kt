@@ -54,6 +54,10 @@ fun main() {
         println(i)
     }
 
+    for (i in "heal".."help") {
+        println(i)
+    }
+
     for (i in 'A'..'C') {
         println(i)
     }
