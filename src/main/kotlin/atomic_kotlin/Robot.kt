@@ -11,36 +11,29 @@ class Robot {
     private var x = 0
     private var y = 0
 
-    fun right(steps: Int) {
-        var newX = (x + steps) % MAX_X
-        if (newX < 0) {
-            newX += MAX_X
+    private fun getLoopedCoordinates(coordinate: Int, max: Int): Int {
+        val newCoordinate = coordinate % max
+        return if (newCoordinate < 0) {
+            newCoordinate + max
+        } else {
+            newCoordinate
         }
-        x = newX
+    }
+
+    fun right(steps: Int) {
+        x = getLoopedCoordinates(x + steps, MAX_X)
     }
 
     fun left(steps: Int) {
-        var newX = (x - steps) % MAX_X
-        if (newX < 0) {
-            newX += MAX_X
-        }
-        x = newX
+        x = getLoopedCoordinates(x - steps, MAX_X)
     }
 
     fun down(steps: Int) {
-        var newY = (y + steps) % MAX_Y
-        if (newY < 0) {
-            newY += MAX_Y
-        }
-        y = newY
+        y = getLoopedCoordinates(y + steps, MAX_Y)
     }
 
     fun up(steps: Int) {
-        var newY = (y - steps) % MAX_Y
-        if (newY < 0) {
-            newY += MAX_Y
-        }
-        y = newY
+        y = getLoopedCoordinates(y - steps, MAX_Y)
     }
 
     fun getLocation(): String = "($x, $y)"
