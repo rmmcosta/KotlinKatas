@@ -10,3 +10,4 @@ fun main() {
     Programmer("My Name", 30, 5)  // name, age, yearsOfWork
     Programmer("My Name", 30)     // name, age
 }
+
