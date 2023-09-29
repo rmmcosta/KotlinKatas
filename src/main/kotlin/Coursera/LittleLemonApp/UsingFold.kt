@@ -26,8 +26,28 @@ data class Dish(
     val ingredients: Set<String>,
 )
 
+class Balance(private val balance: Double) {
+    fun balanceAfterOrders(orders: Collection<OrderItem>): Double = orders.fold(balance) { acc, orderItem ->
+        acc + orderItem.price
+    }
+
+    fun balanceAfterOrders2(orders: Collection<OrderItem>): Double = balance + orders.sumOf { it.price }
+}
+
 fun main() {
     val recipeBook = RecipeBook()
     println(recipeBook.allIngredients())
     println(recipeBook.allIngredients2())
+
+    val orders = listOf(
+        OrderItem("Chicken Soup", 5.0),
+        OrderItem("Quinoa Salad", 7.0),
+        OrderItem("Thai Curry", 10.0),
+        OrderItem("Jambalaya", 12.0),
+        OrderItem("Pad Thai", 8.0),
+    )
+
+    val balance = Balance(100.0)
+    println(balance.balanceAfterOrders(orders))
+    println(balance.balanceAfterOrders2(orders))
 }

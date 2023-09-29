@@ -7,3 +7,5 @@ class TaxCalculator {
             orderItems.sumOf { it.price } * TAX_AMOUNT_PERCENTAGE / 100.0
     }
 }
+
+
