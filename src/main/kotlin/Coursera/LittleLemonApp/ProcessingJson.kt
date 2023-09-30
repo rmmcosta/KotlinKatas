@@ -49,4 +49,10 @@ fun main() {
     }
 
     println(gson.toJson(allReservations))
+
+    val person:Person = gson.fromJson("{\"name\":\"John Doe\"}", Person::class.java)
+//    val person1: Person = gson.fromJson("""{"name":"John Doe"}""")
+
 }
+
+data class Person(val name: String)

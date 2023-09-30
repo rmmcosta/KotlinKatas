@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8ad6bcd7-df67-47ff-be1f-ffdb40ee95df" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Coursera/LittleLemonApp/TaxCalculator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Coursera/LittleLemonApp/TaxCalculator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Coursera/LittleLemonApp/UsingFold.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Coursera/LittleLemonApp/UsingFold.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Coursera/LittleLemonApp/ProcessingJson.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Coursera/LittleLemonApp/ProcessingJson.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +165,7 @@
       <workItem from="1694956349981" duration="10866000" />
       <workItem from="1695286340713" duration="758000" />
       <workItem from="1695405979539" duration="9863000" />
-      <workItem from="1695887650293" duration="3491000" />
+      <workItem from="1695887650293" duration="5163000" />
     </task>
     <servers />
   </component>
