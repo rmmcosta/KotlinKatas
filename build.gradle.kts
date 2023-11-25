@@ -1,3 +1,4 @@
+import org.gradle.api.tasks.testing.logging.TestLogEvent
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -14,6 +15,7 @@ repositories {
 
 dependencies {
     implementation("com.google.code.gson:gson:2.10.1")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.21")
     testImplementation(kotlin("test"))
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
@@ -24,6 +26,13 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+    testLogging {
+        events = setOf(
+            TestLogEvent.PASSED,
+            TestLogEvent.SKIPPED,
+            TestLogEvent.FAILED
+        )
+    }
 }
 
 tasks.withType<KotlinCompile> {
