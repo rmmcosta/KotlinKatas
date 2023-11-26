@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ad6bcd7-df67-47ff-be1f-ffdb40ee95df" name="Changes" comment="feat: a lot of stuff">
+    <list default="true" id="8ad6bcd7-df67-47ff-be1f-ffdb40ee95df" name="Changes" comment="feat: tree builder with type safe builders">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +39,8 @@
         <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
         <option value="Kotlin Object" />
-        <option value="Kotlin File" />
         <option value="JUnit5 Test Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -106,7 +106,7 @@
       <recent name="java_vs_kotlin" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.TreeNodeBuilderWithTypeSafeBuildersKt">
+  <component name="RunManager" selected="Kotlin.HtmlTableBuilderKt">
     <configuration name="CalculatorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -131,8 +131,8 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="SortWithComparatorAndReflectionExampleKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SortWithComparatorAndReflectionExampleKt" />
+    <configuration name="HtmlTableBuilderKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HtmlTableBuilderKt" />
       <module name="KotlinKatas.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -161,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.HtmlTableBuilderKt" />
         <item itemvalue="Kotlin.TreeNodeBuilderWithTypeSafeBuildersKt" />
         <item itemvalue="Kotlin.TreeNodeBuilderKt" />
         <item itemvalue="Gradle.CalculatorTest" />
         <item itemvalue="Kotlin.TheSumKt" />
-        <item itemvalue="Kotlin.SortWithComparatorAndReflectionExampleKt" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +196,7 @@
       <workItem from="1699112733970" duration="17401000" />
       <workItem from="1700320615795" duration="3193000" />
       <workItem from="1700930909316" duration="113000" />
-      <workItem from="1700931034748" duration="5625000" />
+      <workItem from="1700931034748" duration="8782000" />
     </task>
     <task id="LOCAL-00001" summary="chore: adjusted the git ignore">
       <option name="closed" value="true" />
@@ -214,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700941708116</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: tree builder with type safe builders">
+      <option name="closed" value="true" />
+      <created>1700942770779</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700942770779</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +242,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chore: adjusted the git ignore" />
     <MESSAGE value="feat: a lot of stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: a lot of stuff" />
+    <MESSAGE value="feat: tree builder with type safe builders" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: tree builder with type safe builders" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
