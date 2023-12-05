@@ -2,21 +2,35 @@ import java.io.File
 import java.io.File.separator
 
 fun main() {
-    val file = File("src${separator}main${separator}resources${separator}text.txt")
+    countWords(File("src${separator}main${separator}resources${separator}text.txt"))
+    readLinesExample(File("src${separator}main${separator}resources${separator}words_with_numbers.txt"))
+    appendTextToFile(File("src${separator}main${separator}resources${separator}MyCases.txt"), "\nThe Sign of the Four")
+    findTheMostNestedFile(File("src${separator}main${separator}resources${separator}basedir"))
+    val emptySubDirs = getEmptySubDirs(File("src${separator}main${separator}resources${separator}basedir2"))
+    printDirsNames("Empty subdirectories", emptySubDirs)
+}
+
+private fun countWords(file: File) {
     val text = file.readText()
     val countWords = text.split(' ').count { it.isNotEmpty() }
     println("Number of words: $countWords")
-    val file2 = File("src${separator}main${separator}resources${separator}words_with_numbers.txt")
-    val lines = file2.readLines()
+}
+
+private fun readLinesExample(file: File) {
+    val lines = file.readLines()
     val linesWithNumbers = lines.filter { it.contains(Regex("\\d")) }
     println("Lines with numbers: $linesWithNumbers")
     println("Lines with numbers: ${linesWithNumbers.size}")
-    val myFile = File("src${separator}main${separator}resources${separator}MyCases.txt")
-    myFile.appendText("\nThe Sign of the Four")
+}
+
+private fun appendTextToFile(file: File, s: String) {
+    file.appendText(s)
+}
+
+private fun findTheMostNestedFile(file: File) {
     val nestedFiles: MutableMap<String, Int> = mutableMapOf()
-    val nestedDir = File("src${separator}main${separator}resources${separator}basedir")
-    nestedDir.list()?.forEach { println(it) }
-    nestedDir.walkBottomUp().forEach {
+    file.list()?.forEach { println(it) }
+    file.walkBottomUp().forEach {
         if (it.isFile) {
             println("${it.name} is a file with extension ${it.extension} with absolute path ${it.absolutePath}")
             nestedFiles[it.absolutePath] = it.absolutePath.count { ch -> ch == '/' }
@@ -24,19 +38,18 @@ fun main() {
     }
     //println(nestedFiles)
     val theNested = nestedFiles.maxBy { it.value }
-    println("The nested file is ${theNested.key} - ${theNested.key.split('/').last()} with ${theNested.value} nested directories")
-    /*
-        nestedDir.walkTopDown().forEach {
-            if (it.isFile) {
-                val extension = it.extension
-                if (nestedFiles.containsKey(extension)) {
-                    nestedFiles[extension] = nestedFiles[extension]!! + 1
-                } else {
-                    nestedFiles[extension] = 1
-                }
-            }
-        }
-    */
+    println(
+        "The nested file is ${theNested.key} - ${
+            theNested.key.split('/').last()
+        } with ${theNested.value} nested directories"
+    )
 }
 
-//fun howNested(dir:String, )
+private fun getEmptySubDirs(dir: File): List<File> {
+    return dir.walkTopDown().filter { it.isDirectory && it.listFiles()?.isEmpty() == true }.toList()
+}
+
+private fun printDirsNames(initialMsg:String, dirs: List<File>) {
+    print("$initialMsg: ")
+    dirs.forEach { print(it.name.split('/').last() + " ") }
+}
